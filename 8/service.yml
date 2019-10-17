@@ -1,0 +1,114 @@
+name: drupal8-php
+type: service
+hostname: php
+labels:
+- php
+- php-fpm
+- drupal
+- drupal8
+options:
+- version: 7.3
+  stabilityTag: 4.13.12
+  default: true
+- version: 7.0
+  stabilityTag: 4.13.12
+  eol: '2018-12-31Z23:59:59'
+# scalable is false by default.
+scalable: true
+containers:
+- name: php
+  # if main not specified the first port becomes main.
+  main: true
+  env:
+  # remapping of existing env var.
+  - name: 'PHP_NEWRELIC_LICENSE'
+    value: '{{env.NEWRELIC_LICENSE}}'
+  - name: PHP_NEWRELIC_APPNAME
+    value: '{{wodby_app_name}}'
+  # will be available.
+  # - name: VARNISH_ADMIN_PORT
+  ports:
+  - name: fpm
+    number: 9000
+    # if missing, the first port of the main container considered as main.
+    main: value
+    type: tcp
+links:
+- name: db
+  type: db
+  required: true
+  selectors:
+  - labels:
+    - mariadb
+  - labels:
+    - postgres
+- name: redis
+  type: db
+  selectors:
+  - labels:
+    - redis
+- name: memcached
+  type: service
+  selectors:
+  - labels:
+    - memcached
+- name: varnish
+  type: reverse-proxy
+  selectors:
+  - labels:
+    - varnish
+- name: newrelic
+  type: config
+  selectors:
+  - labels:
+    - newrelic
+
+persistentStorage:
+- name: files
+  type: shared
+  size: 10G
+
+integrations:
+- name: backup-destination
+  type: s3-compat
+  labels:
+  - s3
+  required: false
+  jobsOnly: true
+
+jobs:
+- name: backup-files # A part of k8s job name.
+  title: Backup files # For listings.
+  type: backup
+  command: ["make", "backup"]
+  integrations:
+  - backup-destination
+  params:
+  - name: storageSizeFrom
+    value: files
+- name: restore-files
+  type: restore
+  title: Restore files
+  command: ["make", "restore"]
+  integrations:
+  - backup-destination
+  params:
+  - name: storageSizeFrom
+    value: files
+- name: post-deployment-1
+  title: my post deployment action 1
+  type: post-deployment
+  params:
+  - name: custom-param
+    value: '{{token}}'
+- name: post-deployment-2 # Will be executed after post-deployment-1.
+  type: pre-deployment
+  title: my post deployment action 2
+- name: custom-action-1
+  title: My action 1
+  type: custom
+  command: ["make", "some", "action"]
+- name: drush9-alias
+  title: Download Drush 9 alias
+  type: file
+  command: ["make", "drush-alias"]
