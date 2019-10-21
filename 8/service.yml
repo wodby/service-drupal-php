@@ -8,10 +8,10 @@ labels:
 - drupal8
 options:
 - version: 7.3
-  stabilityTag: 4.13.12
+  stability_tag: 4.13.12
   default: true
 - version: 7.0
-  stabilityTag: 4.13.12
+  stability_tag: 4.13.12
   eol: '2018-12-31Z23:59:59'
 # scalable is false by default.
 scalable: true
@@ -31,7 +31,7 @@ containers:
   - name: fpm
     number: 9000
     # if missing, the first port of the main container considered as main.
-    main: value
+    main: true
     type: tcp
 links:
 - name: db
@@ -63,7 +63,7 @@ links:
   - labels:
     - newrelic
 
-persistentStorage:
+storage:
 - name: files
   type: shared
   size: 10G
