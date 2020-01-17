@@ -72,7 +72,7 @@ links:
 storage:
 - name: files
   type: shared
-  size: 10G
+  size: 10
 
 integrations:
 - name: backup-destination
