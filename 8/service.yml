@@ -1,5 +1,6 @@
 name: drupal8-php
 type: service
+title: PHP (Drupal 8)
 hostname: php
 labels:
 - php
