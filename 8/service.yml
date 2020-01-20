@@ -64,11 +64,8 @@ links:
   selectors:
   - labels:
     - varnish
-- name: newrelic
+- name: third-party
   type: config
-  selectors:
-  - labels:
-    - newrelic
 
 storage:
 - name: files
