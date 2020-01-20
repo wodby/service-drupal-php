@@ -64,8 +64,6 @@ links:
   selectors:
   - labels:
     - varnish
-- name: third-party
-  type: config
 
 storage:
 - name: files
