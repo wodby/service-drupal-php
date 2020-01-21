@@ -40,8 +40,10 @@ containers:
     # if missing, the first port of the main container considered as main.
     main: true
     type: tcp
+    
 links:
 - name: db
+  title: DBMS
   type: db
   required: true
   selectors:
@@ -49,17 +51,20 @@ links:
     - mariadb
   - labels:
     - postgres
-- name: redis
+- name: cache-storage
   type: db
+  title: Cache storage
   selectors:
   - labels:
     - redis
-- name: memcached
-  type: service
+- name: cache-storage
+  type: cache-storage
+  title: Cache storage
   selectors:
   - labels:
-    - memcached
+    - memcached    
 - name: varnish
+  title: Varnish
   type: reverse-proxy
   selectors:
   - labels:
@@ -67,6 +72,7 @@ links:
 
 storage:
 - name: files
+  title: Files storage
   type: shared
   size: 10
 
