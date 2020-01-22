@@ -10,6 +10,7 @@ labels:
 deployment:
 - type: git
 options:
+- version: 7.4
 - version: 7.3
   stability_tag: 4.13.12
   default: true
