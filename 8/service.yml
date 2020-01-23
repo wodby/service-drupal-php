@@ -62,16 +62,13 @@ links:
   - labels:
     - postgres
 - name: cache-storage
-  type: db
   title: Cache storage
   selectors:
-  - labels:
+  - type: db
+    labels:
     - redis
-- name: cache-storage
-  type: cache-storage
-  title: Cache storage
-  selectors:
-  - labels:
+  - type: cache-storage
+    labels:
     - memcached    
 - name: varnish
   title: Varnish
