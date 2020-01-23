@@ -54,12 +54,13 @@ services:
 links:
 - name: db
   title: DBMS
-  type: db
   required: true
   selectors:
-  - labels:
+  - type: db
+    labels:
     - mariadb
-  - labels:
+  - type: db
+    labels:
     - postgres
 - name: cache-storage
   title: Cache storage
@@ -72,9 +73,9 @@ links:
     - memcached    
 - name: varnish
   title: Varnish
-  type: reverse-proxy
   selectors:
-  - labels:
+  - type: reverse-proxy
+    labels:
     - varnish
 
 storage:
