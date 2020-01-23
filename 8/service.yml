@@ -18,9 +18,9 @@ options:
   - type: image
     title: Vanilla Drupal
     image: wodby/drupal:8-7.3-4.16.4
-- version: 7.0
+- version: 7.1
   stability_tag: 4.13.12
-  eol: '2018-12-31'
+  eol: '2019-11-30T00:00:00+00:00'
 # scalable is false by default.
 scalable: true
 containers:
