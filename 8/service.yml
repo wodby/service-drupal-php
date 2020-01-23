@@ -20,7 +20,7 @@ options:
     image: wodby/drupal:8-7.3-4.16.4
 - version: 7.0
   stability_tag: 4.13.12
-  eol: '2018-12-31Z23:59:59'
+  eol: '2018-12-31'
 # scalable is false by default.
 scalable: true
 containers:
