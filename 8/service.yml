@@ -25,6 +25,7 @@ options:
 scalable: true
 containers:
 - name: php
+  image: wodby/drupal-php
   # if main not specified the first port becomes main.
   main: true
   env:
