@@ -41,7 +41,16 @@ containers:
     # if missing, the first port of the main container considered as main.
     main: true
     type: tcp
-    
+
+services:
+- name: ssh
+  title: SSH
+  command: sudo /usr/sbin/sshd -De
+  ssh: true
+  env:
+  - name: TEST_SSH
+    value: val123
+
 links:
 - name: db
   title: DBMS
