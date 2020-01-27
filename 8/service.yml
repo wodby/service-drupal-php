@@ -43,7 +43,7 @@ containers:
     main: true
     type: tcp
 
-services:
+derivatives:
 - name: ssh
   title: SSH
   command: sudo /usr/sbin/sshd -De
@@ -91,6 +91,17 @@ integrations:
   type: s3-compat
   required: false
   jobsOnly: true
+
+config:
+- name: docroot
+  title: Drupal root subdir
+  description: For composer based projects it should be "web"  
+  var: DOCROOT_SUBDIR
+- name: sitedir
+  title: Drupal site dir
+  required: true
+  default: default
+  var: DRUPAL_SITE  
 
 jobs:
 - name: backup-files # A part of k8s job name.
