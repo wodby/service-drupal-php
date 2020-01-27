@@ -102,6 +102,15 @@ config:
   required: true
   default: default
   var: DRUPAL_SITE  
+  
+import:
+- name: files
+  title: Drupal files import
+  archives:
+  - tar
+  - tar.gz
+  - tgz
+  - zip
 
 jobs:
 - name: backup-files # A part of k8s job name.
