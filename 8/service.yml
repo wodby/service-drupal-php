@@ -95,7 +95,8 @@ integrations:
 configurations:
 - name: docroot
   title: Drupal root subdir
-  description: For composer based projects it should be "web"  
+  description: 'Composer-based projects have "web" by default' 
+  default: web
   var: DOCROOT_SUBDIR
 - name: sitedir
   title: Drupal site dir
