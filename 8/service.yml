@@ -94,8 +94,9 @@ integrations:
 
 configurations:
 - name: docroot
-  title: Drupal root subdir
-  description: 'Composer-based projects have "web" by default' 
+  title: Drupal root subdirectory
+  description: Composer-based projects have Drupal under 'web' directory by default
+  placeholder: path/relative/to/git/root
   default: web
   var: DOCROOT_SUBDIR
 - name: sitedir
