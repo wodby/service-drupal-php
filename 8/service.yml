@@ -92,7 +92,7 @@ integrations:
   required: false
   jobsOnly: true
 
-config:
+configurations:
 - name: docroot
   title: Drupal root subdir
   description: For composer based projects it should be "web"  
@@ -103,7 +103,7 @@ config:
   default: default
   var: DRUPAL_SITE  
   
-import:
+imports:
 - name: files
   title: Drupal files import
   archives:
