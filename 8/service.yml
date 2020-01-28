@@ -79,7 +79,7 @@ links:
     labels:
     - varnish
 
-storage:
+storages:
 - name: files
   title: Files storage
   type: shared
