@@ -48,6 +48,8 @@ derivatives:
   title: SSH
   command: sudo /usr/sbin/sshd -De
   ssh: true
+  default: true
+  required: false
   env:
   - name: TEST_SSH
     value: val123
