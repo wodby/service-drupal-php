@@ -51,6 +51,11 @@ derivatives:
   env:
   - name: TEST_SSH
     value: val123
+    
+cron:
+- name: drush
+  command: 'drush -r "${HTTP_ROOT}" -l "${WODBY_URL_PRIMARY}" cron'
+  period: 22 * * * * 
 
 links:
 - name: db
