@@ -50,6 +50,11 @@ derivatives:
   ssh: true
   default: true
   required: false
+  resources:
+    request:
+      memory: 8
+    limit:
+      limit: 512  
   env:
   - name: TEST_SSH
     value: val123
