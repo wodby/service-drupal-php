@@ -99,7 +99,7 @@ integrations:
   required: false
   jobsOnly: true
 
-configurations:
+settings:
 - name: docroot
   title: Drupal root subdirectory
   description: Composer-based projects have Drupal under 'web' directory by default
