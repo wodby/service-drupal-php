@@ -49,7 +49,7 @@ containers:
 derivatives:
 - name: ssh
   title: SSH
-  command: sudo /usr/sbin/sshd -De
+  command: ['sudo', '/usr/sbin/sshd', '-De']
   ssh: true
   default: true
   required: false
