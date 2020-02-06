@@ -57,7 +57,7 @@ derivatives:
     request:
       memory: 16
     limit:
-      limit: 512  
+      memory: 512  
   env:
   - name: TEST_SSH
     value: val123
