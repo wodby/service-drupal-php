@@ -28,6 +28,9 @@ containers:
   image: wodby/drupal-php
   # if main not specified the first port becomes main.
   main: true
+  resources:
+    request:
+      memory: 16  
   env:
   # remapping of existing env var.
   - name: 'PHP_NEWRELIC_LICENSE'
@@ -52,7 +55,7 @@ derivatives:
   required: false
   resources:
     request:
-      memory: 8
+      memory: 16
     limit:
       limit: 512  
   env:
