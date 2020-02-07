@@ -58,7 +58,7 @@ derivatives:
     main: true
     number: 80
     type: tcp
-  # for remote debug.
+  # for remote xdebug.
   - name: fpm
     number: 9000
     type: tcp    
