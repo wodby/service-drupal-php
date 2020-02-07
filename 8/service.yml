@@ -58,14 +58,18 @@ derivatives:
     main: true
     number: 80
     type: tcp
+  # for remote debug.
+  - name: fpm
+    number: 9000
+    type: tcp    
   resources:
     request:
       memory: 16
     limit:
       memory: 512  
   env:
-  - name: TEST_SSH
-    value: val123
+  - name: SSHD_GATEWAY_PORTS
+    value: clientspecified
     
 cron:
 - name: drush
