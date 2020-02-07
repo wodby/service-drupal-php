@@ -47,12 +47,17 @@ containers:
     type: tcp
 
 derivatives:
-- name: ssh
-  title: SSH
+- name: sshd
+  title: SSHD
   command: ['sudo', '/usr/sbin/sshd', '-De']
   ssh: true
   default: true
   required: false
+  ports:
+  - name: sshd
+    main: true
+    number: 80
+    type: tcp
   resources:
     request:
       memory: 16
