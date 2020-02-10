@@ -145,6 +145,15 @@ imports:
     - tgz
     - zip
     
+env:
+- name: ADD_TO_ALL_SERVICE_CONTAINERS
+  value: '{{service_token}}'
+
+tokens:
+- name: service_token
+  generate:
+  - regex: '[0-9a-z]{3-4}'
+
 backups:
   command: ["make", "backup"]
   integrations:
