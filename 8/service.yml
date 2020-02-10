@@ -152,7 +152,7 @@ env:
 tokens:
 - name: service_token
   generate:
-  - regex: '[0-9a-z]{3-4}'
+    regex: '[0-9a-z]{3-4}'
 
 backups:
   command: ["make", "backup"]
