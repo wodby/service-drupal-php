@@ -109,6 +109,7 @@ storages:
 - name: files
   title: Files storage
   type: shared
+  path: /mnt/files
   size: 10
 
 integrations:
