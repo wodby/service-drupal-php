@@ -108,7 +108,7 @@ links:
 storages:
 - name: files
   title: Files storage
-  type: shared
+  shared: true
   path: /mnt/files
   size: 10
 
