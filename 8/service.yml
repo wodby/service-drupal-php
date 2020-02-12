@@ -105,9 +105,9 @@ links:
     labels:
     - varnish
 
-storages:
+volumes:
 - name: files
-  title: Files storage
+  title: Files
   shared: true
   path: /mnt/files
   size: 10
