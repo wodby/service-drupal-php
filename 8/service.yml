@@ -52,7 +52,7 @@ derivatives:
 - name: sshd
   title: SSHD
   args: ['sudo', '/usr/sbin/sshd', '-De']
-  ssh: true
+  type: ssh
   default: true
   required: false
   ports:
