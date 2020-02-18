@@ -8,14 +8,16 @@ labels:
 - drupal
 - drupal8
 deployment:
-- type: git
+- name: git
+  type: git
 options:
 - version: 7.4
 - version: 7.3
   stability_tag: 4.13.12
   default: true
   deployment:
-  - type: image
+  - name: vanilla
+    type: image
     title: Vanilla Drupal
     image: wodby/drupal:8-7.3-4.16.4
 - version: 7.1
