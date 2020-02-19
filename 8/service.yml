@@ -39,6 +39,12 @@ containers:
     value: '{{env.NEWRELIC_LICENSE}}'
   - name: PHP_NEWRELIC_APPNAME
     value: '{{wodby_app_name}}'
+  - name: DRUPAL_FILES_SYNC_SALT
+    value: '{{sync_salt}}'
+  - name: DRUPAL_FILES_SYNC_SALT
+    value: '{{sync_salt}}'    
+  - name: DRUPAL_HASH_SALT
+    value: '{{hash_salt}}'  
   # will be available.
   # - name: VARNISH_ADMIN_PORT
   ports:
@@ -149,13 +155,16 @@ imports:
     - zip
     
 env:
-- name: ADD_TO_ALL_SERVICE_CONTAINERS
-  value: '{{service_token}}'
+- name: WODBY_APP_NAME
+  value: '{{wodby_app_name}}'
 
 tokens:
-- name: service_token
+- name: sync_salt
   generate:
-    regex: '[0-9a-z]{3,4}'
+    regex: '[0-9a-z]{32}'
+- name: hash_salt
+  generate:
+    regex: '[0-9a-z]{32}'
 
 backups:
   command: ["make", "backup"]
