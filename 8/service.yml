@@ -7,19 +7,11 @@ labels:
 - php-fpm
 - drupal
 - drupal8
-deployment:
-- name: git
-  type: git
 options:
 - version: 7.4
 - version: 7.3
   stability_tag: 4.13.12
   default: true
-  deployment:
-  - name: vanilla
-    type: image
-    title: Vanilla Drupal
-    repo: https://github.com/drupal/recommended-project
 - version: 7.1
   stability_tag: 4.13.12
   eol: '2019-11-30T00:00:00+00:00'
@@ -54,6 +46,12 @@ containers:
     main: true
     type: tcp
 
+build:
+  defaults:
+    - title: Vanilla Drupal
+    - repo: https://github.com/drupal/recommended-project
+    dockerfile: Dockerfile
+
 derivatives:
 - name: sshd
   title: SSHD
@@ -80,6 +78,8 @@ derivatives:
     value: clientspecified
   - name: DEBUG
     value: 1
+    
+
     
 cron:
 - name: drush
