@@ -49,7 +49,7 @@ containers:
 build:
   defaults:
   - title: Vanilla Drupa
-    repo: https://github.com/drupal/recommended-project
+    repo: https://github.com/wodby/recommended-project
   dockerfile: Dockerfile  
 
 derivatives:
