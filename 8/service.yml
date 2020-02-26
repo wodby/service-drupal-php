@@ -48,9 +48,9 @@ containers:
 
 build:
   defaults:
-    - title: Vanilla Drupal
-    - repo: https://github.com/drupal/recommended-project
-    dockerfile: Dockerfile
+  - title: Vanilla Drupa
+  - repo: https://github.com/drupal/recommended-project
+  dockerfile: Dockerfile  
 
 derivatives:
 - name: sshd
