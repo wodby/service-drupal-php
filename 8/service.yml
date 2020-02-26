@@ -48,7 +48,7 @@ containers:
 
 build:
   defaults:
-  - title: Vanilla Drupa
+    title: Vanilla Drupa
     repo: https://github.com/wodby/recommended-project
   dockerfile: Dockerfile  
 
