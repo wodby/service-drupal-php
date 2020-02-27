@@ -47,10 +47,13 @@ containers:
     type: tcp
 
 build:
-  defaults:
+  sources:
+  - name: vanilla
     title: Vanilla Drupal
     repo: https://github.com/wodby/recommended-project
-  dockerfile: Dockerfile  
+  - name: git
+    title: From my repository
+  dockerfile: Dockerfile
 
 derivatives:
 - name: sshd
