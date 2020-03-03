@@ -9,4 +9,4 @@ ARG DRUPAL_FILES_SYNC_SALT
 ARG DRUPAL_SITE
 ARG DRUPAL_VERSION
 
-RUN make init-drupal
+RUN su-exec wodby make init-drupal -f /usr/local/bin/actions.mk
