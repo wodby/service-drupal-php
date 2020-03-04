@@ -33,12 +33,14 @@ containers:
     value: '{{wodby_app_name}}'
   - name: DRUPAL_FILES_SYNC_SALT
     value: '{{sync_salt}}'
-  - name: DRUPAL_FILES_SYNC_SALT
-    value: '{{sync_salt}}'    
+    secret: true
   - name: DRUPAL_HASH_SALT
     value: '{{hash_salt}}'  
-  # will be available.
-  # - name: VARNISH_ADMIN_PORT
+    secret: true
+  - name: DRUPAL_VERSION
+    value: 8
+  - name: PHP_FPM_ENV_VARS
+    value: '["WODBY_APP_NAME","WODBY_APP_INSTANCE_NAME","WODBY_ENVIRONMENT_NAME","WODBY_ENVIRONMENT_TYPE"]'
   ports:
   - name: fpm
     number: 9000
