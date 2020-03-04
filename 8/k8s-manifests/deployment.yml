@@ -17,12 +17,7 @@ spec:
         name: php
     spec:
       containers:
-      - env:
-        - name: DRUPAL_VERSION
-          value: "8"
-        - name: PHP_FPM_ENV_VARS
-          value: '["APP_ROOT","CONF_DIR","FILES_DIR","HTTP_ROOT","WODBY_APP_DOCROOT","WODBY_APP_NAME","WODBY_APP_ID","WODBY_ENVIRONMENT_NAME","WODBY_ENVIRONMENT_TYPE","WODBY_HOSTS","WODBY_HOST_PRIMARY","WODBY_URL_PRIMARY"]'
-        image: wodby/drupal
+      - image: wodby/drupal
         imagePullPolicy: Always
         name: php
         ports:
