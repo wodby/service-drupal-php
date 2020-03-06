@@ -124,7 +124,7 @@ links:
 - name: varnish
   title: Varnish
   selectors:
-  - type: reverse-proxy
+  - type: proxy
     labels:
     - varnish
 
