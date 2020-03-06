@@ -138,7 +138,7 @@ volumes:
 integrations:
 - name: backup-destination
   title: Backups destination
-  type: s3-compat
+  type: storage
   required: false
   jobsOnly: true
 
