@@ -94,9 +94,7 @@ derivatives:
   - name: SSHD_GATEWAY_PORTS
     value: clientspecified
   - name: DEBUG
-    value: 1
-    
-
+    value: 1   
     
 cron:
 - name: drush
@@ -114,13 +112,13 @@ links:
   - type: db
     labels:
     - postgres
-- name: cache-storage
+- name: cache
   title: Cache storage
   selectors:
   - type: db
     labels:
     - redis
-  - type: cache-storage
+  - type: cache
     labels:
     - memcached    
 - name: varnish
