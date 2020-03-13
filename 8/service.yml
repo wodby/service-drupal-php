@@ -56,14 +56,14 @@ containers:
   - name: DB_HOST
     value: '{{links.db.host}}'
   - name: DB_USER
-    from: '{{wodby_stack_name}}'
+    value: '{{wodby_stack_name}}'
   - name: DB_NAME
-    from: '{{wodby_app_user}}'    
+    value: '{{wodby_app_user}}'    
   - name: DB_PASSWORD
-    from: '{{links.db.tokens.password}}'    
+    value: '{{links.db.tokens.password}}'    
     secret: true    
   - name: DB_DRIVER
-    from: '{{links.db.env.DB_DRIVER}}'
+    value: '{{links.db.env.DB_DRIVER}}'
   - name: REDIS_HOST
     value: '{{links.redis.host}}'
   - name: REDIS_PASSWORD
