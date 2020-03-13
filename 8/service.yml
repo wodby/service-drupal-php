@@ -56,11 +56,11 @@ containers:
   - name: DB_HOST
     value: '{{links.db.host}}'
   - name: DB_USER
-    value: '{{wodby_stack_name}}'
+    value: '{{links.db.env.DB_USER}}'
   - name: DB_NAME
-    value: '{{wodby_app_user}}'    
+    value: '{{links.db.env.DB_NAME}}'    
   - name: DB_PASSWORD
-    value: '{{links.db.tokens.password}}'    
+    value: '{{links.db.env.DB_PASSWORD}}'    
     secret: true    
   - name: DB_DRIVER
     value: '{{links.db.env.DB_DRIVER}}'
