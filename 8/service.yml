@@ -52,7 +52,23 @@ containers:
     env: prod    
   - name: PHP_TRACK_ERRORS
     value: 'Off'
-    env: prod    
+    env: prod   
+  - name: DB_HOST
+    value: '{{links.db.host}}'
+  - name: DB_USER
+    from: '{{wodby_stack_name}}'
+  - name: DB_NAME
+    from: '{{wodby_app_user}}'    
+  - name: DB_PASSWORD
+    from: '{{links.db.tokens.password}}'    
+    secret: true    
+  - name: DB_DRIVER
+    from: '{{links.db.env.DB_DRIVER}}'
+  - name: REDIS_HOST
+    value: '{{links.redis.host}}'
+  - name: REDIS_PASSWORD
+    value: '{{links.redis.tokens.password}}'    
+    secret: true    
   ports:
   - name: fpm
     number: 9000
@@ -112,15 +128,12 @@ links:
   - type: db
     labels:
     - postgres
-- name: cache
-  title: Cache storage
+- name: redis
+  title: Redis
   selectors:
   - type: db
     labels:
     - redis
-  - type: cache
-    labels:
-    - memcached    
 - name: varnish
   title: Varnish
   selectors:
