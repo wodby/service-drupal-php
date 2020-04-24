@@ -195,13 +195,12 @@ tokens:
     regex: '[0-9a-z]{32}'
 
 backups:
+- name: files
+  title: Files backup
   command: ["make", "backup"]
+  upload:
+    dir: /mnt/files
+    zip: false
   integrations:
   - backup-destination
-  params:
-  - name: storageSizeFrom
-    value: files
 
-# todo: 
-# - post-deployment scripts
-# - drush aliases
