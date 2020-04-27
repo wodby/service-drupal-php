@@ -197,10 +197,9 @@ tokens:
 backups:
 - name: files
   title: Files backup
-  command: ["make", "backup"]
   upload:
     dir: /mnt/files
-    zip: false
+    gzip: false
   integrations:
   - backup-destination
 
