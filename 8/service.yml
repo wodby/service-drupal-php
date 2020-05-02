@@ -173,9 +173,15 @@ imports:
   title: Drupal files import
   sources:
   - type: url
-    command: ["make", "files-import", "[source]"]
+    args:
+    - make
+    - files-import
+    - '{{wodby_import_source}}'
   - type: archive
-    command: ["make", "files-import", "[source]"]
+    args:
+    - make
+    - files-import
+    - '{{wodby_import_source}}'
     extensions:
     - tar
     - tar.gz
