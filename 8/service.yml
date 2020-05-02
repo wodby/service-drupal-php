@@ -171,22 +171,15 @@ settings:
 imports:
 - name: files
   title: Drupal files import
-  sources:
-  - type: url
-    args:
-    - make
-    - files-import
-    - '{{wodby_import_source}}'
-  - type: archive
-    args:
-    - make
-    - files-import
-    - '{{wodby_import_source}}'
-    extensions:
-    - tar
-    - tar.gz
-    - tgz
-    - zip
+  args:
+  - make
+  - files-import
+  - '{{wodby_import_url}}'
+  extensions:
+  - tar
+  - tar.gz
+  - tgz
+  - zip
     
 env:
 - name: WODBY_APP_NAME
