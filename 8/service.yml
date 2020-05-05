@@ -174,7 +174,7 @@ imports:
   args:
   - make
   - files-import
-  - '{{wodby_import_url}}'
+  - 'source="{{wodby_import_url}}"'
   extensions:
   - tar
   - tar.gz
