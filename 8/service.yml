@@ -153,7 +153,7 @@ integrations:
   title: Backups destination
   type: storage
   required: false
-  jobsOnly: true
+  multiple: true
 
 settings:
 - name: docroot
