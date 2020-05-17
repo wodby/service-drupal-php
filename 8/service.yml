@@ -9,11 +9,9 @@ labels:
 - drupal8
 options:
 - version: 7.4
-- version: 7.3
-  stability_tag: 4.13.12
   default: true
+- version: 7.3
 - version: 7.1
-  stability_tag: 4.13.12
   eol: '2019-11-30T00:00:00+00:00'
 # scalable is false by default.
 scalable: true
