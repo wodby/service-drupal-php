@@ -1,20 +1,18 @@
-name: drupal8-php
+name: drupal9-php
 type: service
-title: PHP (Drupal 8)
+title: PHP (Drupal 9)
 hostname: php
 labels:
 - php
 - php-fpm
 - drupal
-- drupal8
+- drupal9
 options:
 - version: 7.4
   default: true
   eol: '2022-11-28T00:00:00+00:00'
 - version: 7.3
   eol: '2021-12-06T00:00:00+00:00'
-- version: 7.2
-  eol: '2020-11-30T00:00:00+00:00'
 scalable: true
 containers:
 - name: php
@@ -80,7 +78,7 @@ build:
   - name: vanilla
     title: Vanilla Drupal
     repo: https://github.com/wodby/drupal-vanilla
-    branch: 8.x
+    branch: 9.x
   - name: git
     title: From my repository
   dockerfile: Dockerfile
