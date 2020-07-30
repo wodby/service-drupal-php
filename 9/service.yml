@@ -13,6 +13,7 @@ options:
   eol: '2022-11-28T00:00:00+00:00'
 - version: 7.3
   eol: '2021-12-06T00:00:00+00:00'
+- version: 7.2
 scalable: true
 containers:
 - name: php
