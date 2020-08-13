@@ -24,11 +24,6 @@ containers:
     request:
       memory: 16  
   env:
-  # remapping of existing env var.
-  - name: 'PHP_NEWRELIC_LICENSE'
-    value: '{{env.NEWRELIC_LICENSE}}'
-  - name: PHP_NEWRELIC_APPNAME
-    value: '{{wodby_app_name}}'
   - name: DRUPAL_FILES_SYNC_SALT
     value: '{{sync_salt}}'
     secret: true
@@ -36,7 +31,7 @@ containers:
     value: '{{hash_salt}}'  
     secret: true
   - name: DRUPAL_VERSION
-    value: 8
+    value: 9
   - name: PHP_FPM_ENV_VARS
     value: '["WODBY_APP_NAME","WODBY_APP_INSTANCE_NAME","WODBY_ENVIRONMENT_NAME","WODBY_ENVIRONMENT_TYPE","WODBY_BUILD_NUMBER"]'
   - name: PHP_ERROR_REPORTING
@@ -50,23 +45,7 @@ containers:
     env: prod    
   - name: PHP_TRACK_ERRORS
     value: 'Off'
-    env: prod   
-  - name: DB_HOST
-    value: '{{links.db.host}}'
-  - name: DB_USER
-    value: '{{links.db.env.DB_USER}}'
-  - name: DB_NAME
-    value: '{{links.db.env.DB_NAME}}'    
-  - name: DB_PASSWORD
-    value: '{{links.db.env.DB_PASSWORD}}'    
-    secret: true    
-  - name: DB_DRIVER
-    value: '{{links.db.env.DB_DRIVER}}'
-  - name: REDIS_HOST
-    value: '{{links.redis.host}}'
-  - name: REDIS_PASSWORD
-    value: '{{links.redis.tokens.password}}'    
-    secret: true    
+    env: prod    
   ports:
   - name: fpm
     number: 9000
@@ -119,7 +98,19 @@ cron:
 links:
 - name: db
   title: DBMS
-  required: true
+  required: true  
+  env:
+  - name: DB_HOST
+    value: '{{link.host}}'
+  - name: DB_USER
+    value: '{{link.env.DB_USER}}'
+  - name: DB_NAME
+    value: '{{link.env.DB_NAME}}'    
+  - name: DB_PASSWORD
+    value: '{{link.env.DB_PASSWORD}}'    
+    secret: true    
+  - name: DB_DRIVER
+    value: '{{link.env.DB_DRIVER}}'  
   selectors:
   - type: db
     labels:
@@ -129,6 +120,12 @@ links:
     - postgres
 - name: redis
   title: Redis
+  env:
+  - name: REDIS_HOST
+    value: '{{link.host}}'
+  - name: REDIS_PASSWORD
+    value: '{{link.tokens.password}}'    
+    secret: true   
   selectors:
   - type: db
     labels:
@@ -153,6 +150,18 @@ integrations:
   type: storage
   required: false
   multiple: true
+- name: variable
+  title: Variable
+  type: variable
+  required: false
+  multiple: true
+  variables:
+  - name: newrelic
+    env:
+    - name: PHP_NEWRELIC_LICENSE
+      value: '{{var.PHP_NEWRELIC_LICENSE}}'
+    - name: PHP_NEWRELIC_APPNAME
+      value: '{{wodby_app_name}}'
 
 settings:
 - name: docroot
