@@ -173,10 +173,9 @@ integrations:
     variables: false
     env:
     - name: PHP_NEWRELIC_LICENSE
-      value: '{{var.PHP_NEWRELIC_LICENSE}}'
+      value: '{{integration.variables.NEWRELIC_LICENSE}}'
     - name: PHP_NEWRELIC_APPNAME
       value: '{{wodby_app_name}}'
-
 
 settings:
 - name: docroot
