@@ -170,7 +170,6 @@ integrations:
   multiple: true
   providers:
   - name: newrelic
-    variables: false
     env:
     - name: PHP_NEWRELIC_LICENSE
       value: '{{integration.variables.NEWRELIC_LICENSE}}'
