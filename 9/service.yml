@@ -173,6 +173,7 @@ integrations:
     env:
     - name: PHP_NEWRELIC_LICENSE
       value: '{{integration.variables.NEWRELIC_LICENSE}}'
+      secret: true
     - name: PHP_NEWRELIC_APPNAME
       value: '{{wodby_app_name}}'
 
