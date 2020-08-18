@@ -121,6 +121,8 @@ links:
 - name: redis
   title: Redis
   env:
+  - name: REDIS_PORT
+    value: '{{link.port}}'  
   - name: REDIS_HOST
     value: '{{link.host}}'
   - name: REDIS_PASSWORD
