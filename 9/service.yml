@@ -46,6 +46,8 @@ containers:
   - name: PHP_TRACK_ERRORS
     value: 'Off'
     env: prod    
+  - name: ENV_TEST
+    value: 'test{{wodby_app_name}}123'
   ports:
   - name: fpm
     number: 9000
@@ -121,6 +123,8 @@ links:
 - name: redis
   title: Redis
   env:
+  - name: REDIS_PORT
+    value: '{{link.port}}'
   - name: REDIS_HOST
     value: '{{link.host}}'
   - name: REDIS_PASSWORD
