@@ -64,7 +64,7 @@ build:
   dockerfile: Dockerfile
 
 derivatives:
-- name: sshd
+- name: drupal8-php-sshd
   title: SSHD
   args: ['sudo', '/usr/sbin/sshd', '-De']
   type: ssh
