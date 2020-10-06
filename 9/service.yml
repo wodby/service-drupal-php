@@ -228,3 +228,8 @@ backups:
   integrations:
   - backup-destination
 
+actions:
+- name: clear_cache
+  args: ['drush', 'cc', 'all']
+  type: button
+  title: Clear all cache
