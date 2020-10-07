@@ -233,3 +233,14 @@ actions:
   args: ['drush', 'cc', 'all']
   type: button
   title: Clear all cache
+- name: drush9_alias
+  args: ['make', 'drush8-alias']
+  type: output
+  title: Generate drush 9 alias
+- name: user_login
+  args: ['make', 'user-login']
+  type: output
+  title: Generate one-time login link
+  privileged: true
+
+  
