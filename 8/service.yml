@@ -117,6 +117,9 @@ links:
     - mariadb
   - type: db
     labels:
+    - mysql    
+  - type: db
+    labels:
     - postgres
 - name: redis
   title: Redis
