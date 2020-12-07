@@ -105,14 +105,14 @@ links:
   - name: DB_HOST
     value: '{{link.host}}'
   - name: DB_USER
-    value: '{{link.env.DB_USER}}'
+    value: '{{link.database.user.name}}'
   - name: DB_NAME
-    value: '{{link.env.DB_NAME}}'    
+    value: '{{link.database.db.name}}'    
   - name: DB_PASSWORD
-    value: '{{link.env.DB_PASSWORD}}'    
+    value: '{{link.database.user.password}}'    
     secret: true    
   - name: DB_DRIVER
-    value: '{{link.env.DB_DRIVER}}'  
+    value: '{{link.database.driver}}'
   selectors:
   - type: db
     labels:
