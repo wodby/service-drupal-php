@@ -103,7 +103,7 @@ links:
   required: true  
   env:
   - name: DB_HOST
-    value: '{{link.host}}'
+    value: '{{link.database.host}}'
   - name: DB_USER
     value: '{{link.database.user.name}}'
   - name: DB_NAME
