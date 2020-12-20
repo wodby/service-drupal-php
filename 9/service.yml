@@ -104,6 +104,8 @@ links:
   env:
   - name: DB_HOST
     value: '{{link.database.host}}'
+  - name: DB_PORT
+    value: '{{link.database.port}}'    
   - name: DB_USER
     value: '{{link.database.user.name}}'
   - name: DB_NAME
