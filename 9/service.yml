@@ -47,7 +47,7 @@ containers:
     value: 'Off'
     env: prod    
   - name: ENV_TEST
-    value: 'test{{wodby_app_name}}123'
+    value: 'test{{app.name}}123'
   ports:
   - name: fpm
     number: 9000
@@ -214,7 +214,7 @@ imports:
     
 env:
 - name: WODBY_APP_NAME
-  value: '{{wodby_app_name}}'
+  value: '{{app.name}}'
 
 tokens:
 - name: sync_salt
