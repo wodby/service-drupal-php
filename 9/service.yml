@@ -167,11 +167,6 @@ volumes:
   size: 10
 
 integrations:
-- name: backup-destination
-  title: Backups destination
-  type: storage
-  required: false
-  multiple: true
 - name: variable
   title: Variable
   type: variable
