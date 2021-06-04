@@ -1,5 +1,6 @@
 name: drupal9-php
 type: service
+icon: php
 title: PHP (Drupal 9)
 hostname: php
 labels:
