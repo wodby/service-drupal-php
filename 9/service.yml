@@ -68,6 +68,7 @@ build:
 
 derivatives:
 - name: drupal9-php-sshd
+  icon: ssh
   title: SSHD
   args: ['sudo', '/usr/sbin/sshd', '-De']
   type: ssh
