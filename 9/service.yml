@@ -60,12 +60,13 @@ containers:
     type: tcp
 
 build:
+  dockerfile: Dockerfile
+  connect: true
   templates:
   - name: vanilla
     title: Vanilla Drupal
     repo: https://github.com/wodby/drupal-vanilla
     branch: 9.x
-  dockerfile: Dockerfile
 
 derivatives:
 - name: drupal9-php-sshd
