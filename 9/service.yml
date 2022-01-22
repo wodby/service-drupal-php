@@ -3,6 +3,7 @@ type: service
 icon: php
 title: PHP (Drupal 9)
 hostname: php
+scalable: true
 labels:
 - php
 - php-fpm
@@ -11,14 +12,13 @@ labels:
 options:
 - version: 8.1
   default: true
-  eol: '2024-11-25T00:00:00+00:00'
+  eol: '2024-11-25'
 - version: 8.0
-  eol: '2023-11-26T00:00:00+00:00'
+  eol: '2023-11-26'
 - version: 7.4
-  eol: '2022-11-28T00:00:00+00:00'
+  eol: '2022-11-28'
 - version: 7.3
-  eol: '2021-12-06T00:00:00+00:00'
-scalable: true
+  eol: '2021-12-06'
 containers:
 - name: php
   image: wodby/drupal-php
@@ -26,13 +26,13 @@ containers:
   main: true
   resources:
     request:
-      memory: 16  
+      memory: 16
   env:
   - name: DRUPAL_FILES_SYNC_SALT
     value: '{{sync_salt}}'
     secret: true
   - name: DRUPAL_HASH_SALT
-    value: '{{hash_salt}}'  
+    value: '{{hash_salt}}'
     secret: true
   - name: DRUPAL_VERSION
     value: 9
@@ -43,13 +43,13 @@ containers:
     env: prod
   - name: PHP_DISPLAY_ERRORS
     value: 'Off'
-    env: prod    
+    env: prod
   - name: PHP_DISPLAY_STARTUP_ERRORS
     value: 'Off'
-    env: prod    
+    env: prod
   - name: PHP_TRACK_ERRORS
     value: 'Off'
-    env: prod    
+    env: prod
   - name: ENV_TEST
     value: 'test{{app.name}}123'
   ports:
@@ -84,39 +84,39 @@ derivatives:
   # for remote xdebug.
   - name: fpm
     number: 9000
-    type: tcp    
+    type: tcp
   resources:
     request:
       memory: 16
     limit:
-      memory: 512  
+      memory: 512
   env:
   - name: SSHD_GATEWAY_PORTS
     value: clientspecified
   - name: DEBUG
-    value: 1   
-    
+    value: 1
+
 cron:
 - name: drush
   command: drush -r ${HTTP_ROOT} -l ${WODBY_URL_PRIMARY} cron
-  schedule: 22 * * * * 
+  schedule: 22 * * * *
 
 links:
 - name: db
   title: DBMS
-  required: true  
+  required: true
   env:
   - name: DB_HOST
     value: '{{link.database.host}}'
   - name: DB_PORT
-    value: '{{link.database.port}}'    
+    value: '{{link.database.port}}'
   - name: DB_USER
     value: '{{link.database.user.name}}'
   - name: DB_NAME
-    value: '{{link.database.db.name}}'    
+    value: '{{link.database.db.name}}'
   - name: DB_PASSWORD
-    value: '{{link.database.user.password}}'    
-    secret: true    
+    value: '{{link.database.user.password}}'
+    secret: true
   - name: DB_DRIVER
     value: '{{link.database.driver}}'
   selectors:
@@ -125,7 +125,7 @@ links:
     - mariadb
   - type: db
     labels:
-    - mysql    
+    - mysql
   - type: db
     labels:
     - postgres
@@ -137,8 +137,8 @@ links:
   - name: REDIS_HOST
     value: '{{link.host}}'
   - name: REDIS_PASSWORD
-    value: '{{link.tokens.password}}'    
-    secret: true   
+    value: '{{link.tokens.password}}'
+    secret: true
   selectors:
   - type: db
     labels:
@@ -196,8 +196,8 @@ settings:
   title: Drupal site dir
   required: true
   default: default
-  var: DRUPAL_SITE  
-  
+  var: DRUPAL_SITE
+
 imports:
 - name: files
   title: Drupal files import
@@ -210,7 +210,7 @@ imports:
   - tar.gz
   - tgz
   - zip
-    
+
 env:
 - name: WODBY_APP_NAME
   value: '{{app.name}}'
@@ -247,4 +247,3 @@ actions:
   title: Generate one-time login link
   privileged: true
 
-  
