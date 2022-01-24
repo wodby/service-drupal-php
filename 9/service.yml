@@ -40,16 +40,16 @@ containers:
     value: '["WODBY_APP_NAME","WODBY_APP_INSTANCE_NAME","WODBY_ENVIRONMENT_NAME","WODBY_ENVIRONMENT_TYPE","WODBY_BUILD_NUMBER"]'
   - name: PHP_ERROR_REPORTING
     value: 'E_ALL & ~E_DEPRECATED & ~E_STRICT'
-    env: prod
+    envType: prod
   - name: PHP_DISPLAY_ERRORS
     value: 'Off'
-    env: prod
+    envType: prod
   - name: PHP_DISPLAY_STARTUP_ERRORS
     value: 'Off'
-    env: prod
+    envType: prod
   - name: PHP_TRACK_ERRORS
     value: 'Off'
-    env: prod
+    envType: prod
   - name: ENV_TEST
     value: 'test{{app.name}}123'
   ports:
