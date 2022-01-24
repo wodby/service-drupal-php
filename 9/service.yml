@@ -10,14 +10,14 @@ labels:
 - drupal
 - drupal9
 options:
-- version: 8.1
+- version: '8.1'
   default: true
   eol: '2024-11-25T00:00:00+00:00'
-- version: 8.0
+- version: '8.0'
   eol: '2023-11-26T00:00:00+00:00'
-- version: 7.4
+- version: '7.4'
   eol: '2022-11-28T00:00:00+00:00'
-- version: 7.3
+- version: '7.3'
   eol: '2021-12-06T00:00:00+00:00'
 containers:
 - name: php
