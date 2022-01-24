@@ -35,7 +35,7 @@ containers:
     value: '{{hash_salt}}'
     secret: true
   - name: DRUPAL_VERSION
-    value: 9
+    value: '9'
   - name: PHP_FPM_ENV_VARS
     value: '["WODBY_APP_NAME","WODBY_APP_INSTANCE_NAME","WODBY_ENVIRONMENT_NAME","WODBY_ENVIRONMENT_TYPE","WODBY_BUILD_NUMBER"]'
   - name: PHP_ERROR_REPORTING
