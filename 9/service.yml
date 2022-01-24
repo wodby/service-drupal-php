@@ -94,7 +94,7 @@ derivatives:
   - name: SSHD_GATEWAY_PORTS
     value: clientspecified
   - name: DEBUG
-    value: 1
+    value: '1'
 
 cron:
 - name: drush
