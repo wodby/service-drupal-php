@@ -96,12 +96,6 @@ derivatives:
   - name: DEBUG
     value: '1'
 
-cron:
-- name: drush
-  title: drush cron
-  command: drush -r ${HTTP_ROOT} -l ${WODBY_URL_PRIMARY} cron
-  schedule: 22 * * * *
-
 links:
 - name: db
   title: DBMS
