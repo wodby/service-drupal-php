@@ -1,25 +1,21 @@
-name: drupal9-php
+name: php-drupal9
 type: service
 from: php
 title: PHP (Drupal 9)
 labels:
-- php
-- php-fpm
 - drupal
 - drupal9
-containers:
-- name: php
-  image: wodby/drupal-php
-  main: true
-  env:
-  - name: DRUPAL_FILES_SYNC_SALT
-    value: '{{sync_salt}}'
-    secret: true
-  - name: DRUPAL_HASH_SALT
-    value: '{{hash_salt}}'
-    secret: true
-  - name: DRUPAL_VERSION
-    value: '9'
+
+env:
+- name: DRUPAL_FILES_SYNC_SALT
+  value: '{{sync_salt}}'
+  secret: true
+- name: DRUPAL_HASH_SALT
+  value: '{{hash_salt}}'
+  secret: true
+- name: DRUPAL_VERSION
+  value: '9'
+
 
 build:
   dockerfile: Dockerfile
