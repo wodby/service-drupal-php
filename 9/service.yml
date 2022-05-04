@@ -6,6 +6,8 @@ labels:
 - drupal
 - drupal9
 
+update: auto
+
 cron:
 - name: drush 
   title: drush cron
