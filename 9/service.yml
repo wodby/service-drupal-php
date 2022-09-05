@@ -28,7 +28,6 @@ env:
 - name: DRUPAL_VERSION
   value: '9'
 
-
 build:
   dockerfile: Dockerfile
   connect: true
