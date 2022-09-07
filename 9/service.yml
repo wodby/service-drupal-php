@@ -1,4 +1,4 @@
-name: php-drupal9
+name: drupal9-php
 type: service
 from: php
 title: PHP (Drupal 9)
