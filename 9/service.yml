@@ -12,6 +12,13 @@ containers:
 - name: php
   image: wodby/drupal-php
 
+volumes:
+- name: files
+  title: Files
+  shared: true
+  path: /mnt/files
+  size: 10
+
 cron:
 - name: drush 
   title: drush cron
