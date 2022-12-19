@@ -1,10 +1,10 @@
-name: drupal9-php
+name: drupal10-php
 type: service
 from: php
-title: PHP (Drupal 9)
+title: PHP (Drupal 10)
 labels:
 - drupal
-- drupal9
+- drupal10
 
 update: auto
 
@@ -33,7 +33,7 @@ env:
   value: '{{hash_salt}}'
   secret: true
 - name: DRUPAL_VERSION
-  value: '9'
+  value: '10'
 
 build:
   dockerfile: Dockerfile
