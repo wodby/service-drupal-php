@@ -42,7 +42,7 @@ build:
   - name: vanilla
     title: Vanilla Drupal
     repo: https://github.com/wodby/drupal-vanilla
-    branch: 9.x
+    branch: 10.x
 
 settings:
 - name: docroot
