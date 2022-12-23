@@ -12,10 +12,17 @@ containers:
 - name: php
   image: wodby/drupal-php
 
+links:
+- name: files
+  title: Files storage
+  required: true
+  selectors:
+  - type: storage
+
 volumes:
 - name: files
   title: Files
-  shared: true
+  link: files
   path: /mnt/files
   size: 10
 
