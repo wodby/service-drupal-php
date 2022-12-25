@@ -15,6 +15,7 @@ containers:
 links:
 - name: files
   title: Files storage
+  shared: true
   required: true
   selectors:
   - type: storage
