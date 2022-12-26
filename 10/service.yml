@@ -15,7 +15,6 @@ containers:
 links:
 - name: files
   title: Files storage
-  shared: true
   required: true
   selectors:
   - type: storage
@@ -24,6 +23,7 @@ volumes:
 - name: files
   title: Files
   link: files
+  shared: true
   path: /mnt/files
   size: 10
 
