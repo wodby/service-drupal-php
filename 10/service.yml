@@ -43,7 +43,7 @@ env:
 - name: DRUPAL_VERSION
   value: '10'
 - name: HTTP_ROOT
-  value: "/var/www/html/${DOCROOT_SUBDIR}"
+  value: "${APP_ROOT}/${DOCROOT_SUBDIR}"
 
 build:
   dockerfile: Dockerfile
