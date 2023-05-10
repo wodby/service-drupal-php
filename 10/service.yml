@@ -23,9 +23,7 @@ volumes:
 - name: files
   title: Files
   link: files
-  shared: true
   path: /mnt/files
-  size: 10
 
 cron:
 - name: drush 
