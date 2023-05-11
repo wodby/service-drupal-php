@@ -22,6 +22,8 @@ links:
 volumes:
 - name: files
   title: Files
+  shared: true
+  size: 10
   link: files
   path: /mnt/files
 
