@@ -18,6 +18,18 @@ links:
   required: true
   selectors:
   - type: storage
+- name: solr
+  title: Solr
+  env:
+  - name: SOLR_CLOUD_SERVER
+    value: '{{link.host}}'
+  - name: SOLR_CLOUD_PASSWORD
+    value: '{{link.tokens.password}}'
+    secret: true
+  selectors:
+  - type: search
+    labels:
+    - solr
 
 volumes:
 - name: files
