@@ -30,6 +30,20 @@ links:
   - type: search
     labels:
     - solr
+- name: valkey
+  title: Valkey
+  env:
+  - name: VALKEY_PORT
+    value: '{{link.port}}'
+  - name: VALKEY_HOST
+    value: '{{link.host}}'
+  - name: VALKEY_PASSWORD
+    value: '{{link.tokens.password}}'
+    secret: true
+  selectors:
+  - type: datastore
+    labels:
+    - valkey
 
 volumes:
 - name: files
