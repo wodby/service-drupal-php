@@ -30,20 +30,23 @@ links:
   - type: search
     labels:
     - solr
-- name: valkey
-  title: Valkey
+- name: redis
+  title: Redis
   env:
-  - name: VALKEY_PORT
+  - name: REDIS_PORT
     value: '{{link.port}}'
-  - name: VALKEY_HOST
+  - name: REDIS_HOST
     value: '{{link.host}}'
-  - name: VALKEY_PASSWORD
+  - name: REDIS_PASSWORD
     value: '{{link.tokens.password}}'
     secret: true
   selectors:
   - type: datastore
     labels:
-    - valkey
+    - redis
+  - type: datastore
+    labels:
+    - valkey    
 
 volumes:
 - name: files
