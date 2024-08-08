@@ -1,0 +1,124 @@
+name: drupal11-php
+type: service
+from: php
+title: PHP (Drupal 11)
+labels:
+- drupal
+- drupal11
+
+update: auto
+
+containers:
+- name: php
+  image: wodby/drupal-php
+
+links:
+- name: files
+  title: Files storage
+  required: true
+  selectors:
+  - type: storage
+- name: solr
+  title: Solr
+  env:
+  - name: SOLR_CLOUD_SERVER
+    value: '{{link.host}}'
+  - name: SOLR_CLOUD_PASSWORD
+    value: '{{link.tokens.password}}'
+    secret: true
+  selectors:
+  - type: search
+    labels:
+    - solr
+- name: redis
+  title: Redis
+  env:
+  - name: REDIS_PORT
+    value: '{{link.port}}'
+  - name: REDIS_HOST
+    value: '{{link.host}}'
+  - name: REDIS_PASSWORD
+    value: '{{link.tokens.password}}'
+    secret: true
+  selectors:
+  - type: datastore
+    labels:
+    - redis
+  - type: datastore
+    labels:
+    - valkey    
+
+volumes:
+- name: files
+  title: Files
+  shared: true
+  size: 10
+  link: files
+  path: /mnt/files
+  import:
+    owner: 82
+    group: 82
+
+cron:
+- name: drush 
+  title: drush cron
+  command: drush -r ${HTTP_ROOT} -l ${WODBY_PRIMARY_URL} cron
+  schedule: 0 0 * * *
+
+env:
+- name: DRUPAL_FILES_SYNC_SALT
+  value: '{{sync_salt}}'
+  secret: true
+- name: DRUPAL_HASH_SALT
+  value: '{{hash_salt}}'
+  secret: true
+- name: DRUPAL_VERSION
+  value: '11'
+- name: HTTP_ROOT
+  value: "${APP_ROOT}/${DOCROOT_SUBDIR}"
+
+build:
+  dockerfile: Dockerfile
+  connect: true
+  templates:
+  - name: vanilla
+    title: Vanilla Drupal
+    repo: https://github.com/wodby/drupal-vanilla
+    branch: 11.x
+
+settings:
+- name: docroot
+  title: Drupal root subdirectory
+  description: Composer-based projects have Drupal under 'web' directory by default
+  placeholder: path/relative/to/git/root
+  default: web
+  var: DOCROOT_SUBDIR
+- name: sitedir
+  title: Drupal site dir
+  required: true
+  default: default
+  var: DRUPAL_SITE
+
+tokens:
+- name: sync_salt
+  generate:
+    regex: '[0-9a-z]{32}'
+- name: hash_salt
+  generate:
+    regex: '[0-9a-z]{32}'
+
+actions:
+- name: clear_cache
+  args: ['drush', 'cc', 'all']
+  type: button
+  title: Clear all cache
+- name: drush9_alias
+  args: ['make', 'drush9-alias']
+  type: output
+  title: Generate drush 9 alias
+- name: user_login
+  args: ['make', 'user-login']
+  type: output
+  title: Generate one-time login link
+  privileged: true
+
