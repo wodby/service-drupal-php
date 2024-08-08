@@ -6,6 +6,11 @@ labels:
 - drupal
 - drupal11
 
+options:
+- version: '8.3'
+  default: true
+  eol: '2026-11-23T00:00:00+00:00'
+
 update: auto
 
 containers:
@@ -112,10 +117,10 @@ actions:
   args: ['drush', 'cc', 'all']
   type: button
   title: Clear all cache
-- name: drush9_alias
-  args: ['make', 'drush9-alias']
-  type: output
-  title: Generate drush 9 alias
+# - name: drush9_alias
+#   args: ['make', 'drush9-alias']
+#   type: output
+#   title: Generate drush 9 alias
 - name: user_login
   args: ['make', 'user-login']
   type: output
