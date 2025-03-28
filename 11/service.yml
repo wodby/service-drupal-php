@@ -88,14 +88,15 @@ build:
   dockerfile: Dockerfile
   connect: true
   templates:
+  - name: vanilla
+    title: Vanilla Drupal
+    repo: https://github.com/wodby/drupal-vanilla
+    branch: 11.x  
   - name: cms
     title: Drupal CMS
     repo: https://github.com/wodby/drupal-cms-template
     branch: main
-  - name: vanilla
-    title: Vanilla Drupal
-    repo: https://github.com/wodby/drupal-vanilla
-    branch: 11.x
+
 
 settings:
 - name: docroot
