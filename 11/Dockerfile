@@ -8,4 +8,9 @@ ARG DOCROOT_SUBDIR
 ARG DRUPAL_SITE
 ARG DRUPAL_VERSION
 
+ENV COMPOSER_CACHE_DIR=/home/wodby/.composer/cache
+
+RUN --mount=type=cache,target=/home/wodby/.composer/cache \
+    composer install -n --no-ansi --prefer-dist
+
 RUN make init-drupal -f /usr/local/bin/actions.mk
