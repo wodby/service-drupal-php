@@ -8,15 +8,11 @@ labels:
 
 options:
 - version: '8.3'
-- version: '8.4'  
+- version: '8.4'
   default: true
-- version: '8.5'  
+- version: '8.5'
 
 update: auto
-
-containers:
-- name: php
-  image: wodby/drupal-php
 
 links:
 - name: files
@@ -52,7 +48,7 @@ links:
     - redis
   - type: datastore
     labels:
-    - valkey    
+    - valkey
 
 volumes:
 - name: files
@@ -66,7 +62,7 @@ volumes:
     group: 82
 
 cron:
-- name: drush 
+- name: drush
   title: drush cron
   command: drush -r ${HTTP_ROOT} -l ${WODBY_PRIMARY_URL} cron
   schedule: 0 0 * * *
@@ -90,11 +86,11 @@ build:
   - name: cms
     title: Drupal CMS
     repo: https://github.com/wodby/drupal-cms-template
-    branch: main  
+    branch: main
   - name: vanilla
     title: Vanilla Drupal
     repo: https://github.com/wodby/drupal-vanilla
-    branch: 11.x  
+    branch: 11.x
 
 
 settings:
@@ -133,3 +129,10 @@ actions:
   title: Generate one-time login link
   privileged: true
 
+workloads:
+- id: main
+  kind: deployment
+  primary: true
+  containers:
+  - name: php
+    image: wodby/drupal-php

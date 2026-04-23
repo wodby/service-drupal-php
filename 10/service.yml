@@ -8,10 +8,6 @@ labels:
 
 update: auto
 
-containers:
-- name: php
-  image: wodby/drupal-php
-
 links:
 - name: files
   title: Files storage
@@ -46,7 +42,7 @@ links:
     - redis
   - type: datastore
     labels:
-    - valkey    
+    - valkey
 
 volumes:
 - name: files
@@ -60,7 +56,7 @@ volumes:
     group: 82
 
 cron:
-- name: drush 
+- name: drush
   title: drush cron
   command: drush -r ${HTTP_ROOT} -l ${WODBY_PRIMARY_URL} cron
   schedule: 0 0 * * *
@@ -122,3 +118,10 @@ actions:
   title: Generate one-time login link
   privileged: true
 
+workloads:
+- id: main
+  kind: deployment
+  primary: true
+  containers:
+  - name: php
+    image: wodby/drupal-php
