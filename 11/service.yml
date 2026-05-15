@@ -124,6 +124,10 @@ actions:
   type: output
   title: Generate one-time login link
   privileged: true
+- name: updb
+  args: ['drush', 'updb']
+  type: button
+  title: Apply pending database updates
 
 workloads:
 - name: main
