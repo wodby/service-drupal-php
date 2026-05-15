@@ -121,7 +121,7 @@ actions:
   title: Rebuild all cache
 - name: user_login
   args: ['make', 'user-login']
-  type: output
+  type: button
   title: Generate one-time login link
   privileged: true
 - name: updb
