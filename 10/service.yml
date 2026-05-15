@@ -105,18 +105,18 @@ tokens:
 
 actions:
 - name: clear_cache
-  args: ['drush', 'cc', 'all']
+  args: ['drush', 'cr']
   type: button
-  title: Clear all cache
-- name: drush9_alias
-  args: ['make', 'drush9-alias']
-  type: output
-  title: Generate drush 9 alias
+  title: Rebuild all cache
 - name: user_login
   args: ['make', 'user-login']
-  type: output
+  type: button
   title: Generate one-time login link
   privileged: true
+- name: updb
+  args: ['drush', 'updb']
+  type: button
+  title: Apply pending database updates
 
 workloads:
 - name: main
