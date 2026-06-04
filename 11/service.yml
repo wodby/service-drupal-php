@@ -92,6 +92,7 @@ build:
     title: Vanilla Drupal
     repo: https://github.com/wodby/drupal-vanilla
     branch: 11.x
+    default: true
 
 
 settings:
