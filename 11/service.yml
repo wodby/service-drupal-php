@@ -12,7 +12,6 @@ options:
   default: true
 - version: '8.5'
 
-update: auto
 
 links:
 - name: files

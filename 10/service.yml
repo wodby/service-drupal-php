@@ -6,7 +6,6 @@ labels:
 - drupal
 - drupal10
 
-update: auto
 
 links:
 - name: files
