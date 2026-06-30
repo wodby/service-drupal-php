@@ -1,6 +1,7 @@
 name: drupal10-php
 type: service
 from: php
+fromVersion: "^1.0.0"
 title: PHP (Drupal 10)
 labels:
 - drupal
