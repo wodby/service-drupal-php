@@ -2,7 +2,7 @@ name: drupal11-php
 type: service
 from: php
 fromVersionConstraint: "^1.0.0"
-fromVersion: "1.0.0"
+fromVersion: "1.0.1"
 title: PHP (Drupal 11)
 labels:
 - drupal

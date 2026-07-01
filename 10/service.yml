@@ -2,7 +2,7 @@ name: drupal10-php
 type: service
 from: php
 fromVersionConstraint: "^1.0.0"
-fromVersion: "1.0.0"
+fromVersion: "1.0.1"
 title: PHP (Drupal 10)
 labels:
 - drupal
@@ -87,7 +87,8 @@ build:
 settings:
 - name: docroot
   title: Drupal root subdirectory
-  description: Composer-based projects have Drupal under 'web' directory by default
+  description: Composer-based projects have Drupal under 'web' directory by 
+    default
   placeholder: path/relative/to/git/root
   default: web
   var: DOCROOT_SUBDIR
