@@ -10,7 +10,9 @@ labels:
 
 options:
 - version: '8.1'
+  tag: 8.1-4.77.3
 - version: '8.2'
+  tag: 8.2-4.82.1
 - version: '8.3'
   tag: 8.3-4.82.1
 - version: '8.4'
