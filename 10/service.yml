@@ -18,7 +18,6 @@ options:
   default: true
   eol: '2028-12-31T00:00:00+00:00'
   tag: 8.4-4.82.1
-
 links:
 - name: files
   title: Files storage
