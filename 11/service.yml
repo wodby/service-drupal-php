@@ -15,7 +15,7 @@ options:
   tag: 8.4-4.82.1
 - version: '8.5'
   tag: 8.5-4.82.1
-  default: true  
+  default: true
 links:
 - name: files
   title: Files storage
