@@ -12,11 +12,9 @@ options:
 - version: '8.1'
 - version: '8.2'
 - version: '8.3'
-  eol: '2027-12-31T00:00:00+00:00'
   tag: 8.3-4.82.1
 - version: '8.4'
   default: true
-  eol: '2028-12-31T00:00:00+00:00'
   tag: 8.4-4.82.1
 links:
 - name: files
