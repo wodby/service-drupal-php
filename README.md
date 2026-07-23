@@ -1,13 +1,25 @@
-# Drupal PHP services for Wodby
+# Drupal PHP service for Kubernetes on Wodby
 
-Use Drupal PHP as a reusable component in applications managed by Wodby. This
-repository contains the service manifests and referenced files used by the
-public Drupal PHP service entries in the Wodby catalog.
+Build and run Drupal PHP applications on Kubernetes with Wodby.
 
-- [PHP (Drupal 11) service in the Wodby catalog](https://wodby.com/services/drupal11-php)
-- [PHP (Drupal 10) service in the Wodby catalog](https://wodby.com/services/drupal10-php)
+This repository defines the Wodby service manifests and operational
+configuration for Drupal PHP.
+
+- [Browse Wodby services](https://wodby.com/services)
 - [Wodby service documentation](https://wodby.com/docs/2.0/services/)
 - [Service manifest reference](https://wodby.com/docs/2.0/services/template/)
+
+## Start with a template
+
+Use one of the source templates exposed by this service to start with
+compatible build configuration and Wodby CI:
+
+- [Drupal CMS](https://github.com/wodby/drupal-cms-template)
+- [Vanilla Drupal](https://github.com/wodby/drupal-vanilla)
+
+## Wodby stacks using this service
+
+- [Drupal application stack](https://github.com/wodby/stack-drupal)
 
 ## Service entries
 
@@ -49,39 +61,29 @@ Manifest: [`10/service.yml`](10/service.yml)
 
 ## Use this service
 
-A service is a reusable component and does not deploy by itself. Add the public
-catalog service to a stack, configure its required links and settings, publish
-the stack, and then create or upgrade an app instance.
+Use this service through [Drupal application stack](https://github.com/wodby/stack-drupal), or reference `drupal10-php`,
+`drupal11-php` from a custom Wodby stack.
 
-To maintain your own version of this service:
+A service is a reusable component and does not deploy by itself. The stack
+defines its links, settings, versions, resources, and relationship to the rest
+of the application.
+
+## Maintain a custom version
 
 1. Fork this repository.
-2. Edit the service manifest and any files it references.
-3. Import the repository as a
-   [Git-backed service](https://wodby.com/docs/2.0/services/create/#create-a-git-backed-service).
-4. Reference `drupal11-php`, `drupal10-php` from your stack manifest.
-
-Wodby imports the manifest and referenced files from the selected Git branch or
-tag and creates a new service revision when the Git-backed service is updated.
-
-## Customize the service
-
-Common changes include adjusting versions, images, Helm chart settings, build
-inputs, environment variables, links, storage, resources, and operational
-workflows supported by the manifest.
+2. Edit the service manifest and referenced files.
+3. Import the repository as a [Git-backed service](https://wodby.com/docs/2.0/services/create/#create-a-git-backed-service).
+4. Reference the service from a stack manifest.
 
 Keep service, workload, container, endpoint, link, volume, config, and
 derivative names stable unless dependent stacks and app-level overrides are
-updated at the same time. These names are part of the contract consumed by
-downstream manifests.
+updated at the same time.
 
-Validate customized manifests with the Wodby CLI before importing them:
+Validate the manifests with:
 
 ```bash
 wodby service validate-manifest 11/service.yml --org <org-id>
 wodby service validate-manifest 10/service.yml --org <org-id>
 ```
 
-See the [service manifest reference](https://wodby.com/docs/2.0/services/template/)
-for every supported field and the [managed services
-index](https://github.com/wodby/services) for more service examples.
+See the [service manifest reference](https://wodby.com/docs/2.0/services/template/) and the [managed services index](https://github.com/wodby/services).
