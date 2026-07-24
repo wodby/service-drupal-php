@@ -9,10 +9,10 @@ configuration for Drupal PHP.
 - [Wodby service documentation](https://wodby.com/docs/2.0/services/)
 - [Service manifest reference](https://wodby.com/docs/2.0/services/template/)
 
-## Start with a template
+## Start with a boilerplate
 
-Use one of the source templates exposed by this service to start with
-compatible build configuration and Wodby CI:
+Use one of the boilerplates exposed by this service to start with compatible
+build configuration and Wodby CI:
 
 - [Drupal CMS](https://github.com/wodby/drupal-cms-template)
 - [Vanilla Drupal](https://github.com/wodby/drupal-vanilla)
@@ -35,7 +35,7 @@ compatible build configuration and Wodby CI:
 | Containers | `php` using `wodby/drupal-php`, build target |
 | Service links | Files storage (`files`), required, Solr, optional, Redis, optional |
 | Volumes | Files, 10 GB, shared, linked through `files` |
-| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; starters: Drupal CMS, Vanilla Drupal |
+| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; boilerplates: Drupal CMS, Vanilla Drupal |
 | Configuration | 2 settings, 2 generated or fixed tokens |
 | Operations | 3 actions, 1 cron schedules |
 
@@ -53,7 +53,7 @@ Manifest: [`11/service.yml`](11/service.yml)
 | Containers | `php` using `wodby/drupal-php`, build target |
 | Service links | Files storage (`files`), required, Solr, optional, Redis, optional |
 | Volumes | Files, 10 GB, shared, linked through `files` |
-| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; starters: Vanilla Drupal |
+| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; boilerplates: Vanilla Drupal |
 | Configuration | 2 settings, 2 generated or fixed tokens |
 | Operations | 3 actions, 1 cron schedules |
 

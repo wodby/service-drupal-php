@@ -85,7 +85,7 @@ env:
 build:
   dockerfile: Dockerfile
   connect: true
-  templates:
+  boilerplates:
   - name: cms
     title: Drupal CMS
     repo: https://github.com/wodby/drupal-cms-template
