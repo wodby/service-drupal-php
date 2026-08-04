@@ -2,7 +2,7 @@ name: drupal10-php
 type: service
 from: php
 fromVersionConstraint: "^1.0.0"
-fromVersion: "1.0.5"
+fromVersion: "1.0.6"
 title: PHP (Drupal 10)
 labels:
 - drupal
@@ -12,12 +12,12 @@ options:
 - version: '8.1'
   tag: 8.1-4.77.3
 - version: '8.2'
-  tag: 8.2-4.82.3
+  tag: 8.2-4.82.4
 - version: '8.3'
-  tag: 8.3-4.82.3
+  tag: 8.3-4.82.4
 - version: '8.4'
   default: true
-  tag: 8.4-4.82.3
+  tag: 8.4-4.82.4
 links:
 - name: files
   title: Files storage

@@ -2,7 +2,7 @@ name: drupal11-php
 type: service
 from: php
 fromVersionConstraint: "^1.0.0"
-fromVersion: "1.0.5"
+fromVersion: "1.0.6"
 title: PHP (Drupal 11)
 labels:
 - drupal
@@ -10,11 +10,11 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-4.82.3
+  tag: 8.3-4.82.4
 - version: '8.4'
-  tag: 8.4-4.82.3
+  tag: 8.4-4.82.4
 - version: '8.5'
-  tag: 8.5-4.82.3
+  tag: 8.5-4.82.4
   default: true
 links:
 - name: files
