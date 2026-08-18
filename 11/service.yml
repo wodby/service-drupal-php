@@ -81,9 +81,10 @@ env:
   build: true
 - name: HTTP_ROOT
   value: "${APP_ROOT}/${DOCROOT_SUBDIR}"
+- name: WODBY_INIT_ACTION
+  value: init-drupal
 
 build:
-  dockerfile: Dockerfile
   connect: true
   boilerplates:
   - name: cms
