@@ -10,11 +10,11 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-4.82.5
+  tag: 8.3-4.82.6
 - version: '8.4'
-  tag: 8.4-4.82.5
+  tag: 8.4-4.82.6
 - version: '8.5'
-  tag: 8.5-4.82.5
+  tag: 8.5-4.82.6
   default: true
 links:
 - name: files
@@ -81,9 +81,10 @@ env:
   build: true
 - name: HTTP_ROOT
   value: "${APP_ROOT}/${DOCROOT_SUBDIR}"
+- name: WODBY_INIT_ACTION
+  value: init-drupal
 
 build:
-  dockerfile: Dockerfile
   connect: true
   boilerplates:
   - name: cms
