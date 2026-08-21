@@ -78,7 +78,6 @@ env:
   secret: true
 - name: DRUPAL_VERSION
   value: '11'
-  build: true
 - name: HTTP_ROOT
   value: "${APP_ROOT}/${DOCROOT_SUBDIR}"
 - name: WODBY_INIT_ACTION
@@ -106,13 +105,11 @@ settings:
   placeholder: path/relative/to/git/root
   default: web
   var: DOCROOT_SUBDIR
-  build: true
 - name: sitedir
   title: Drupal site dir
   required: true
   default: default
   var: DRUPAL_SITE
-  build: true
 
 tokens:
 - name: sync_salt
