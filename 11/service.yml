@@ -10,11 +10,11 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-4.82.6
+  tag: 8.3-4.82.7
 - version: '8.4'
-  tag: 8.4-4.82.6
+  tag: 8.4-4.82.7
 - version: '8.5'
-  tag: 8.5-4.82.6
+  tag: 8.5-4.82.7
   default: true
 derivatives:
 - name: drupal11-php-sshd
@@ -108,7 +108,7 @@ env:
   value: '11'
 - name: HTTP_ROOT
   value: "${APP_ROOT}/${DOCROOT_SUBDIR}"
-- name: WODBY_INIT_ACTION
+- name: WODBY2_SERVICE_INIT_ACTION
   value: init-drupal
 
 build:
