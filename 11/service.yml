@@ -1,8 +1,8 @@
 name: drupal11-php
 type: service
 from: php
-fromVersionConstraint: "^1.0.0"
-fromVersion: "1.0.7"
+fromVersionConstraint: "^2.0.0"
+fromVersion: "2.0.0"
 title: PHP (Drupal 11)
 labels:
 - drupal
@@ -16,6 +16,34 @@ options:
 - version: '8.5'
   tag: 8.5-4.82.6
   default: true
+derivatives:
+- name: drupal11-php-sshd
+  icon: ssh
+  title: SSHD
+  args: ['sudo', '/usr/sbin/sshd', '-De']
+  type: ssh
+  default: true
+  required: false
+  endpoints:
+  - name: sshd
+    ports:
+    - name: sshd
+      main: true
+      number: 22
+      protocol: tcp
+  env:
+  - name: SSHD_GATEWAY_PORTS
+    value: clientspecified
+  helm:
+    values:
+    - name: livenessProbe
+      value: ""
+    - name: readinessProbe
+      value: ""
+    - name: containerPort.name
+      value: sshd
+    - name: containerPort.number
+      value: 22
 links:
 - name: files
   title: Files storage
