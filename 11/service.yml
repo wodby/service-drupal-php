@@ -108,7 +108,7 @@ env:
   value: '11'
 - name: HTTP_ROOT
   value: "${APP_ROOT}/${DOCROOT_SUBDIR}"
-- name: WODBY_INIT_ACTION
+- name: WODBY2_SERVICE_INIT_ACTION
   value: init-drupal
 
 build:
