@@ -29,7 +29,7 @@ build configuration and Wodby CI:
 | --- | --- |
 | Service name | `drupal11-php` |
 | Type | Application service |
-| Inherits from | [`php`](https://github.com/wodby/service-php) with version constraint `^1.0.0` |
+| Inherits from | [`php`](https://github.com/wodby/service-php) with version constraint `^2.0.0` |
 | Versions | `8.5` by default; also available: `8.3`, `8.4` |
 | Workloads | `main` (Deployment), primary |
 | Containers | `php` using `wodby/drupal-php`, build target |
@@ -47,7 +47,7 @@ Manifest: [`11/service.yml`](11/service.yml)
 | --- | --- |
 | Service name | `drupal10-php` |
 | Type | Application service |
-| Inherits from | [`php`](https://github.com/wodby/service-php) with version constraint `^1.0.0` |
+| Inherits from | [`php`](https://github.com/wodby/service-php) with version constraint `^2.0.0` |
 | Versions | `8.4` by default; also available: `8.1`, `8.2`, `8.3` |
 | Workloads | `main` (Deployment), primary |
 | Containers | `php` using `wodby/drupal-php`, build target |
