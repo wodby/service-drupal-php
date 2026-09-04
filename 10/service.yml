@@ -2,7 +2,7 @@ name: drupal10-php
 type: service
 from: php
 fromVersionConstraint: "^2.0.0"
-fromVersion: "2.0.3"
+fromVersion: "2.0.6"
 title: PHP (Drupal 10)
 labels:
 - drupal
