@@ -2,7 +2,7 @@ name: drupal10-php
 type: service
 from: php
 fromVersionConstraint: "^2.0.0"
-fromVersion: "2.0.7"
+fromVersion: "2.0.8"
 title: PHP (Drupal 10)
 labels:
 - drupal
@@ -10,12 +10,12 @@ labels:
 
 options:
 - version: '8.2'
-  tag: 8.2-4.82.9
+  tag: 8.2-4.83.3
 - version: '8.3'
-  tag: 8.3-4.82.9
+  tag: 8.3-4.83.3
 - version: '8.4'
   default: true
-  tag: 8.4-4.82.9
+  tag: 8.4-4.83.3
 derivatives:
 - name: drupal10-php-sshd
   icon: ssh
