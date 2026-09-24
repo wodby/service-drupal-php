@@ -2,7 +2,7 @@ name: drupal10-php
 type: service
 from: php
 fromVersionConstraint: "^3.0.0"
-fromVersion: "3.0.0"
+fromVersion: "3.0.1"
 title: PHP (Drupal 10)
 labels:
 - drupal
@@ -170,3 +170,6 @@ workloads:
   - name: php
     image: wodby/drupal-php
     build: true
+
+# Parent upgrades must not enable unvalidated workspace behavior.
+workspace: false
