@@ -1,8 +1,8 @@
 name: drupal11-php
 type: service
 from: php
-fromVersionConstraint: "^3.0.0"
-fromVersion: "3.0.1"
+fromVersionConstraint: "^3.1.0"
+fromVersion: "3.1.0"
 title: PHP (Drupal 11)
 labels:
 - drupal
@@ -10,11 +10,14 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-r2
+  tag: 8.3-r5
+  devTag: 8.3-dev-r5
 - version: '8.4'
-  tag: 8.4-r2
+  tag: 8.4-r5
+  devTag: 8.4-dev-r5
 - version: '8.5'
-  tag: 8.5-r2
+  tag: 8.5-r5
+  devTag: 8.5-dev-r5
   default: true
 derivatives:
 - name: drupal11-php-sshd
@@ -173,3 +176,14 @@ workloads:
   - name: php
     image: wodby/drupal-php
     build: true
+
+# Prepare writable code and upload links before read-only consumers start.
+workspace:
+  preparation:
+  - name: initialize-site
+    command:
+    - /bin/sh
+    - -eu
+    - -c
+    - 'mkdir -p "$FILES_DIR/public"; make -f /usr/local/bin/actions.mk init-drupal'
+    timeoutSeconds: 120
