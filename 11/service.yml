@@ -10,14 +10,14 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-r5
-  devTag: 8.3-dev-r5
+  tag: 8.3-r8
+  devTag: 8.3-dev-r8
 - version: '8.4'
-  tag: 8.4-r5
-  devTag: 8.4-dev-r5
+  tag: 8.4-r8
+  devTag: 8.4-dev-r8
 - version: '8.5'
-  tag: 8.5-r5
-  devTag: 8.5-dev-r5
+  tag: 8.5-r8
+  devTag: 8.5-dev-r8
   default: true
 derivatives:
 - name: drupal11-php-sshd
@@ -187,3 +187,20 @@ workspace:
     - -c
     - 'mkdir -p "$FILES_DIR/public"; make -f /usr/local/bin/actions.mk init-drupal'
     timeoutSeconds: 120
+  # Composer generates the docroot, recipes and Drush commands. Git status shows
+  # only custom modules, themes, profiles and recipes there. A docroot at the
+  # repository root skips the docroot patterns.
+  ignore:
+  - '/{{settings.docroot}}/*'
+  - '!/{{settings.docroot}}/modules/'
+  - '/{{settings.docroot}}/modules/*'
+  - '!/{{settings.docroot}}/modules/custom/'
+  - '!/{{settings.docroot}}/themes/'
+  - '/{{settings.docroot}}/themes/*'
+  - '!/{{settings.docroot}}/themes/custom/'
+  - '!/{{settings.docroot}}/profiles/'
+  - '/{{settings.docroot}}/profiles/*'
+  - '!/{{settings.docroot}}/profiles/custom/'
+  - '/recipes/*'
+  - '!/recipes/custom/'
+  - '/drush/Commands/contrib/'
