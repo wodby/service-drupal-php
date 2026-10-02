@@ -48,6 +48,8 @@ derivatives:
     - name: containerPort.number
       value: 22
 links:
+- name: db
+  required: true
 - name: files
   title: Files storage
   required: true
