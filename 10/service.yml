@@ -155,7 +155,6 @@ actions:
   args: ['make', 'user-login']
   type: button
   title: Generate one-time login link
-  privileged: true
 - name: updb
   args: ['drush', 'updb']
   type: button
