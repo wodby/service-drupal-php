@@ -11,14 +11,14 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-r9
-  devTag: 8.3-dev-r9
+  tag: 8.3-r10
+  devTag: 8.3-dev-r10
 - version: '8.4'
-  tag: 8.4-r9
-  devTag: 8.4-dev-r9
+  tag: 8.4-r10
+  devTag: 8.4-dev-r10
 - version: '8.5'
-  tag: 8.5-r9
-  devTag: 8.5-dev-r9
+  tag: 8.5-r10
+  devTag: 8.5-dev-r10
   default: true
 derivatives:
 - name: drupal11-php-sshd
