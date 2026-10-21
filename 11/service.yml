@@ -3,7 +3,7 @@ type: service
 from: php
 guidance: GUIDANCE.md
 fromVersionConstraint: "^3.0.0"
-fromVersion: "3.2.0"
+fromVersion: "3.2.1"
 title: PHP (Drupal 11)
 labels:
 - drupal
@@ -11,13 +11,13 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-r11
+  tag: 8.3-r12
   devTag: 8.3-dev-r11
 - version: '8.4'
-  tag: 8.4-r11
+  tag: 8.4-r12
   devTag: 8.4-dev-r11
 - version: '8.5'
-  tag: 8.5-r11
+  tag: 8.5-r12
   devTag: 8.5-dev-r11
   default: true
 derivatives:
