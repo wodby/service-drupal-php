@@ -126,11 +126,11 @@ build:
     title: Drupal CMS
     repo: https://github.com/wodby/drupal-cms-template
     branch: main
+    default: true
   - name: vanilla
     title: Vanilla Drupal
     repo: https://github.com/wodby/drupal-vanilla
     branch: 11.x
-    default: true
 
 
 settings:
