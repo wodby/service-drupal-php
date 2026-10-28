@@ -14,7 +14,7 @@ configuration for Drupal PHP.
 Use one of the boilerplates exposed by this service to start with compatible
 build configuration and Wodby CI:
 
-- [Drupal CMS](https://github.com/wodby/drupal-cms-template)
+- [Drupal CMS](https://github.com/wodby/drupal-cms-template), the default for Drupal 11
 - [Vanilla Drupal](https://github.com/wodby/drupal-vanilla)
 
 ## Wodby stacks using this service
