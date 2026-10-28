@@ -113,7 +113,9 @@ env:
 - name: DRUPAL_VERSION
   value: '11'
 - name: HTTP_ROOT
-  value: "${APP_ROOT}/${DOCROOT_SUBDIR}"
+  # Kubernetes does not expand shell variables in env values, so the root is built from the image's APP_ROOT
+  # (/var/www/html) and the docroot setting.
+  value: '/var/www/html/{{settings.docroot}}'
 - name: WODBY2_SERVICE_INIT_ACTION
   value: init-drupal
 
