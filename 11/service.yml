@@ -3,7 +3,7 @@ type: service
 from: php
 guidance: GUIDANCE.md
 fromVersionConstraint: "^3.0.0"
-fromVersion: "3.3.0"
+fromVersion: "3.3.1"
 title: PHP (Drupal 11)
 labels:
 - drupal
@@ -11,14 +11,14 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-r17
-  devTag: 8.3-dev-r17
+  tag: 8.3-r18
+  devTag: 8.3-dev-r18
 - version: '8.4'
-  tag: 8.4-r17
-  devTag: 8.4-dev-r17
+  tag: 8.4-r18
+  devTag: 8.4-dev-r18
 - version: '8.5'
-  tag: 8.5-r17
-  devTag: 8.5-dev-r17
+  tag: 8.5-r18
+  devTag: 8.5-dev-r18
   default: true
 derivatives:
 - name: drupal11-php-sshd
@@ -136,7 +136,8 @@ build:
 settings:
 - name: docroot
   title: Drupal root subdirectory
-  description: Composer-based projects have Drupal under 'web' directory by default
+  description: Composer-based projects have Drupal under 'web' directory by 
+    default
   placeholder: path/relative/to/git/root
   default: web
   var: DOCROOT_SUBDIR
