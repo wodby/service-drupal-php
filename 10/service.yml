@@ -3,7 +3,7 @@ type: service
 from: php
 guidance: GUIDANCE.md
 fromVersionConstraint: "^3.0.0"
-fromVersion: "3.4.0"
+fromVersion: "3.4.1"
 title: PHP (Drupal 10)
 labels:
 - drupal
@@ -11,15 +11,15 @@ labels:
 
 options:
 - version: '8.2'
-  tag: 8.2-r18
-  devTag: 8.2-dev-r18
+  tag: 8.2-r19
+  devTag: 8.2-dev-r19
 - version: '8.3'
-  tag: 8.3-r18
-  devTag: 8.3-dev-r18
+  tag: 8.3-r19
+  devTag: 8.3-dev-r19
 - version: '8.4'
   default: true
-  tag: 8.4-r18
-  devTag: 8.4-dev-r18
+  tag: 8.4-r19
+  devTag: 8.4-dev-r19
 derivatives:
 - name: drupal10-php-sshd
   icon: ssh
