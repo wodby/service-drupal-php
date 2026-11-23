@@ -3,7 +3,7 @@ type: service
 from: php
 guidance: GUIDANCE.md
 fromVersionConstraint: "^3.0.0"
-fromVersion: "3.4.5"
+fromVersion: "3.4.6"
 title: PHP (Drupal 11)
 labels:
 - drupal
@@ -11,20 +11,20 @@ labels:
 
 options:
 - version: '8.3'
-  tag: 8.3-r23
-  digest: sha256:54f680d879592b3c99d9853c029ee0733beb2d2b5e1275979a210e1320e12bb3
-  devTag: 8.3-dev-r23
-  devDigest: sha256:5a3b2ca102870e6a94847887eeb4aa618d3ef81992f0800a0d70821b0de48e62
+  tag: 8.3-r24
+  digest: sha256:6a1a32aa04d43537324fde239c813e00b31c8d70d61da199806855fdd5d446b5
+  devTag: 8.3-dev-r24
+  devDigest: sha256:06181084b45d61fb5db3c18fe5ac3d263759c83ffb98d773885c230d077453ed
 - version: '8.4'
-  tag: 8.4-r23
-  digest: sha256:9b5e10a005299cd50b6b44b115b63150ce2892a52f2ecb0db50670000a28d811
-  devTag: 8.4-dev-r23
-  devDigest: sha256:1af9821478f69f73de05bc599bd3443b776399e52246f44031278b5d4505860c
+  tag: 8.4-r24
+  digest: sha256:423d2f511a57d986ff1c5f3d081d58a1f8f5a8f0255a9f80f0a2ed4ac185d078
+  devTag: 8.4-dev-r24
+  devDigest: sha256:6606b6d583c76780dab467659f283d60aab12240fee0845c3e8b3aa1796b3c7a
 - version: '8.5'
-  tag: 8.5-r23
-  digest: sha256:8afb27c2dd14bb0853891fe0e58b05ede83620530636cfc5a5ac596405e23db8
-  devTag: 8.5-dev-r23
-  devDigest: sha256:8084ba06d53d99e869a65286e58560bfd314b644833bdef6497a89c17f20f7db
+  tag: 8.5-r24
+  digest: sha256:0004df947fd8149bc7a616fbe73de3d2ca32ab0c68e50c741b8f41c55135d302
+  devTag: 8.5-dev-r24
+  devDigest: sha256:a66b74465cc5fefab9cb4d916ec5f91ce4231ee10d4b566573e00cdbc128c39c
   default: true
 derivatives:
 - name: drupal11-php-sshd
